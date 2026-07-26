@@ -16,7 +16,7 @@ The organization required a highly secure and segmented network utilizing the `1
 
 ## My Design Approach & Implementation
 Based on the organizational requirements outlined above, I designed the network by implementing the following networking solutions:
-![Network Topology](TOPOLGY sw.png)
+![TOPOLGY sw.png](TOPOLGY sw.png)
 ### 1. IP Addressing & VLSM
 To prevent IP address exhaustion and ensure efficient allocation, I designed a Variable Length Subnet Mask (VLSM) scheme perfectly tailored to the required host counts[cite: 1]:
 *   **VLAN 10:** Subnet `192.168.10.0/26` | Gateway `192.168.10.1`[cite: 1].
