@@ -1,6 +1,3 @@
-Here is the complete `README.md` file formatted in English, highlighting your role as the network designer and focusing on the advanced switching concepts. You can copy and paste this directly into your GitHub repository.
-
-```markdown
 # Comprehensive Campus Switching Network Design
 
 ## Description
@@ -57,5 +54,3 @@ I thoroughly tested the design to ensure all requirements were met successfully:
 3. Open the `Campus_Network.pkt` file.
 4. Allow a few seconds for the Spanning Tree Protocol (STP) to converge (link lights will turn green).
 5. Open the Command Prompt on any PC and test the connectivity (e.g., `ping 8.8.8.8`).
-
-```
