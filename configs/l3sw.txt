@@ -1,0 +1,174 @@
+L3SW#show startup-config 
+Using 2594 bytes
+!
+version 12.2(37)SE1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname L3SW
+!
+!
+no profinet
+enable secret 5 $1$mERr$DqFv/bNKU3CFm5jwSLasx/
+!
+!
+!
+!
+!
+ip routing
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain-lookup
+!
+!
+spanning-tree mode pvst
+spanning-tree vlan 10,20,30,40,50 priority 24576
+!
+!
+!
+!
+!
+!
+interface Port-channel1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface Port-channel2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+!
+interface FastEthernet0/1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 1 mode active
+!
+interface FastEthernet0/2
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 1 mode active
+!
+interface FastEthernet0/3
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 2 mode active
+!
+interface FastEthernet0/4
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ channel-group 2 mode active
+!
+interface FastEthernet0/5
+ no switchport
+ ip address 192.168.20.1 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+interface Vlan10
+ mac-address 0002.169d.6801
+ ip address 192.168.10.1 255.255.255.192
+ ip helper-address 192.168.20.2
+!
+interface Vlan20
+ mac-address 0002.169d.6802
+ ip address 192.168.10.65 255.255.255.192
+ ip helper-address 192.168.20.2
+!
+interface Vlan30
+ mac-address 0002.169d.6803
+ ip address 192.168.10.129 255.255.255.224
+ ip helper-address 192.168.20.2
+!
+interface Vlan40
+ mac-address 0002.169d.6804
+ ip address 192.168.10.161 255.255.255.224
+ ip helper-address 192.168.20.2
+!
+interface Vlan50
+ mac-address 0002.169d.6805
+ ip address 192.168.10.193 255.255.255.240
+ ip helper-address 192.168.20.2
+!
+ip classless
+ip route 0.0.0.0 0.0.0.0 192.168.20.2 
+!
+ip flow-export version 9
+!
+!
+!
+banner motd ^CWelcome L3SW :) ^C
+!
+!
+!
+!
+!
+line con 0
+ password 7 08701E1D
+ login
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+!
+end
