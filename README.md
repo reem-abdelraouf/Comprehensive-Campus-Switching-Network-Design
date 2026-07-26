@@ -3,6 +3,7 @@
 ## Description
 This repository contains a comprehensive enterprise network topology focused heavily on advanced switching concepts, Layer 2 security, and Inter-VLAN routing. I designed this entire network architecture from scratch to meet specific organizational requirements, utilizing Cisco Packet Tracer for simulation and verification. The core objective was to build a highly available, secure, and logically segmented campus network.
 
+
 ## Project Requirements
 The organization required a highly secure and segmented network utilizing the `192.168.10.0/24` base IP block[cite: 1]. I was tasked with designing a topology to accommodate the following departments and their specific host capacities:
 *   **VLAN 10 (Engineering):** Requires support for 60 clients[cite: 1].
@@ -15,7 +16,7 @@ The organization required a highly secure and segmented network utilizing the `1
 
 ## My Design Approach & Implementation
 Based on the organizational requirements outlined above, I designed the network by implementing the following networking solutions:
-
+![Network Topology](TOPOLGY sw.png)
 ### 1. IP Addressing & VLSM
 To prevent IP address exhaustion and ensure efficient allocation, I designed a Variable Length Subnet Mask (VLSM) scheme perfectly tailored to the required host counts[cite: 1]:
 *   **VLAN 10:** Subnet `192.168.10.0/26` | Gateway `192.168.10.1`[cite: 1].
