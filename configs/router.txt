@@ -1,0 +1,115 @@
+Router#show startup-config 
+Using 1695 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+service password-encryption
+!
+hostname Router
+!
+!
+!
+enable secret 5 $1$mERr$DqFv/bNKU3CFm5jwSLasx/
+!
+!
+ip dhcp excluded-address 192.168.10.0 192.168.10.5
+ip dhcp excluded-address 192.168.10.64 192.168.10.69
+ip dhcp excluded-address 192.168.10.128 192.168.10.133
+ip dhcp excluded-address 192.168.10.160 192.168.10.165
+ip dhcp excluded-address 192.168.10.192 192.168.10.197
+!
+ip dhcp pool ManagementVLAN50
+ network 192.168.10.192 255.255.255.240
+ default-router 192.168.10.193
+ip dhcp pool EngineeringVLAN10
+ network 192.168.10.0 255.255.255.192
+ default-router 192.168.10.1
+ip dhcp pool HRVLAN20
+ network 192.168.10.64 255.255.255.192
+ default-router 192.168.10.65
+ip dhcp pool SalesVLAN30
+ network 192.168.10.128 255.255.255.224
+ default-router 192.168.10.129
+ip dhcp pool PRVLAN40
+ network 192.168.10.160 255.255.255.224
+ default-router 192.168.10.161
+!
+!
+!
+ip cef
+no ipv6 cef
+!
+!
+!
+!
+license udi pid CISCO2911/K9 sn FTX15246B1P-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain-lookup
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface GigabitEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface GigabitEthernet0/1
+ ip address 192.168.20.2 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface GigabitEthernet0/2
+ ip address 8.8.8.1 255.255.255.0
+ duplex auto
+ speed auto
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+ip classless
+ip route 192.168.10.0 255.255.255.0 192.168.20.1 
+ip route 192.168.10.0 255.255.255.192 192.168.20.1 
+!
+ip flow-export version 9
+!
+!
+!
+banner motd ^CWelcome router :) ^C
+!
+!
+!
+!
+line con 0
+ password 7 08701E1D
+ login
+!
+line aux 0
+!
+line vty 0 4
+ login
+!
+!
+!
+end
+
+
+Router#
